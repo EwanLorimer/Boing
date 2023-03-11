@@ -14,6 +14,8 @@ import java.util.NoSuchElementException;
 public class Queue<T> {
 
 	//TODO:  You need some data to store the queue.  Put the attributes here.
+	private QueueElement head;
+	private QueueElement tail;
 
 	
 	/**
@@ -21,6 +23,8 @@ public class Queue<T> {
 	 */
 	public Queue () {
 	    //TODO: Write the Queue constructor
+		this.head = null;
+		this.tail = null;
 	}
 	
 	/**
@@ -28,7 +32,11 @@ public class Queue<T> {
 	 */
 	public boolean isEmpty () {
 	    //TODO:  Needs to return true when empty and false otherwise
-	    return true;
+		if (this.head == null && this.tail == null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	
@@ -36,7 +44,11 @@ public class Queue<T> {
 	 * Returns the element at the head of the queue
 	 */
 	public T peek () throws NoSuchElementException {
-		return null; //DELETE AND CHANGE TO SOMETHING SENSIBLE
+		if (isEmpty()) {
+			throw new NoSuchElementException("Queue is empty");
+		} else {
+			return (T) this.head.getElement();
+		}
 	}
 	
 	/**
@@ -51,6 +63,14 @@ public class Queue<T> {
 	 */
 	public void enqueue (T element) {
 	    //Enqueue code is needed here
+		QueueElement newElement = new QueueElement(element, null);
+		if (this.tail == null) {
+			this.head = newElement;
+			this.tail = newElement;
+		} else {
+			this.tail = newElement;
+
+		}
 	}
 	
 	/**

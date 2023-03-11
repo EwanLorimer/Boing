@@ -34,11 +34,7 @@ public class ReadShapeFile {
 		Queue<ClosedShape> shapeQueue = new Queue<ClosedShape>();
 
 		//read in the shape files and place them on the Queue
-		while (in.hasNextLine()) {
-			String data = in.nextLine();
-			System.out.println(data);
 
-		}
 		//Right now, returning an empty Queue.  You need to change this.
 		return shapeQueue;
 	}
@@ -64,13 +60,18 @@ public class ReadShapeFile {
 		Scanner in = null;
 		try {
 			in = new Scanner(inputFile);
+			while (in.hasNextLine()) {
+				String data = in.nextLine();
+				System.out.println(data);
+
+			}
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Could not find " + filename);
 			System.exit(0);
 		}
 		in.close();
-	    return ReadShapeFile.readLineByLine(in);
-	    
+		return ReadShapeFile.readLineByLine(in);
+
 	}
 }
