@@ -7,8 +7,6 @@ package com.example.boing;
  * @author you
  *
  */
-
-
 import java.util.NoSuchElementException;
 
 public class Queue<T> {
@@ -56,6 +54,17 @@ public class Queue<T> {
 	 */
 	public void dequeue () throws NoSuchElementException {
 	    //Dequeue code is neede here
+
+		if (this.head == null) {
+			this.tail = null;
+			throw new NoSuchElementException("Queue is empty");
+		} else {
+			this.head = this.head.getNext();
+			if (this.head == null) {
+				this.tail = null;
+			}
+		}
+
 	}
 	
 	/**
@@ -68,6 +77,7 @@ public class Queue<T> {
 			this.head = newElement;
 			this.tail = newElement;
 		} else {
+			this.tail.setNext(newElement);
 			this.tail = newElement;
 
 		}
@@ -78,5 +88,16 @@ public class Queue<T> {
 	 */
 	public void print () {
 	    //Code to print the code is needed here
+		QueueElement pointer = this.head;
+		if (isEmpty()) {
+			System.out.println("Queue is empty");
+		} else {
+			while (pointer != tail) {
+				System.out.println(pointer.getElement());
+				pointer = pointer.getNext();
+			}
+			System.out.println(pointer.getElement());
+
+		}
 	}
 }
