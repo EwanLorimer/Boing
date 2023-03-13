@@ -12,8 +12,8 @@ import java.util.NoSuchElementException;
 public class Queue<T> {
 
 	//TODO:  You need some data to store the queue.  Put the attributes here.
-	private QueueElement head;
-	private QueueElement tail;
+	private QueueElement<T> head;
+	private QueueElement<T> tail;
 
 	
 	/**
@@ -72,7 +72,7 @@ public class Queue<T> {
 	 */
 	public void enqueue (T element) {
 	    //Enqueue code is needed here
-		QueueElement newElement = new QueueElement(element, null);
+		QueueElement<T> newElement = new QueueElement<T>(element, null);
 		if (this.tail == null) {
 			this.head = newElement;
 			this.tail = newElement;
@@ -88,9 +88,9 @@ public class Queue<T> {
 	 */
 	public void print () {
 	    //Code to print the code is needed here
-		QueueElement pointer = this.head;
+		QueueElement<T> pointer = this.head;
 		if (isEmpty()) {
-			System.out.println("Queue is empty");
+			System.out.println("");
 		} else {
 			while (pointer != tail) {
 				System.out.println(pointer.getElement());

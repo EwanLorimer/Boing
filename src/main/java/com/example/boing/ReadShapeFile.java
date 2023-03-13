@@ -41,7 +41,14 @@ public class ReadShapeFile {
 
 
 
-
+	private static Oval createOval() {
+		Oval newOval;
+		return newOval;
+	}
+	private static Circle createCircle() {
+		Circle newCircle;
+		
+	}
 
 	/**
 	 * Method to read the file and return a queue of shapes from this file. The
@@ -58,6 +65,7 @@ public class ReadShapeFile {
 		File inputFile = new File(filename);
 	    //you may want a Scanner here?
 		Scanner in = null;
+
 		try {
 			in = new Scanner(inputFile);
 			while (in.hasNextLine()) {
@@ -71,6 +79,7 @@ public class ReadShapeFile {
 			System.exit(0);
 		}
 		in.close();
+
 		return ReadShapeFile.readLineByLine(in);
 
 	}
