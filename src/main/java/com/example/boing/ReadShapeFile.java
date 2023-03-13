@@ -21,6 +21,15 @@ public class ReadShapeFile {
 	// given the Scanner passed as a parameter. I would suggest static
 	// methods in this case.
 
+	private static Oval createOval() {
+		Oval newOval;
+		return newOval;
+	}
+	private static Circle createCircle() {
+		Circle newCircle;
+		return newCircle;
+	}
+
 	/**
 	 * Reads the data file used by the program and returns the constructed queue
 	 * 
@@ -30,25 +39,23 @@ public class ReadShapeFile {
 	 */
 
 
+
 	private static Queue<ClosedShape> readLineByLine(Scanner in) {
 		Queue<ClosedShape> shapeQueue = new Queue<ClosedShape>();
 
 		//read in the shape files and place them on the Queue
+		while (in.hasNextLine()) {
+			String data = in.nextLine();
+			System.out.println(data);
 
+		}
 		//Right now, returning an empty Queue.  You need to change this.
 		return shapeQueue;
 	}
 
 
 
-	private static Oval createOval() {
-		Oval newOval;
-		return newOval;
-	}
-	private static Circle createCircle() {
-		Circle newCircle;
-		
-	}
+
 
 	/**
 	 * Method to read the file and return a queue of shapes from this file. The
@@ -68,11 +75,7 @@ public class ReadShapeFile {
 
 		try {
 			in = new Scanner(inputFile);
-			while (in.hasNextLine()) {
-				String data = in.nextLine();
-				System.out.println(data);
 
-			}
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Could not find " + filename);
