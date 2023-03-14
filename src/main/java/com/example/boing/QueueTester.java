@@ -1,4 +1,4 @@
-package com.example.boing;
+//package com.example.boing;
 /**
  * A class that tests if the queue is working properly.
  */
