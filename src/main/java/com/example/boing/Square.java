@@ -1,4 +1,4 @@
-//package com.example.boing;
+package com.example.boing;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 public class Square extends ClosedShape {
     private int side;
     /**
-     * Creates a rectangle.
+     * Creates a square.
      * @param x The display component's x position.
      * @param y The display component's y position.
      * @param vx The display component's x velocity.
@@ -20,13 +20,21 @@ public class Square extends ClosedShape {
         this.side = side;
     }
 
+    /**
+     * Output information about shape
+     * @return result String which contains shape info
+     */
     public String toString () {
-        String result = "This is a rectangle\n";
+        String result = "This is a square\n";
         result += super.toString ();
         result += "Its side is " + this.side + "\n";
         return result;
     }
 
+    /**
+     * Draw the shape on screen
+     * @param g The graphics object associated with the drawing component.
+     */
     public void draw(GraphicsContext g) {
         g.setFill (colour);
         g.setStroke( colour );
@@ -38,16 +46,27 @@ public class Square extends ClosedShape {
         }
     }
 
+    /**
+     *
+     * @param side Value that the side will be set to
+     */
     public void setSide(int side) {
         this.side = side;
     }
-    public void setHeight(int height) {
-        this.side = side;
-    }
+
+
+    /**
+     *
+     * @return side length
+     */
     public int getHeight() {
         return this.side;
     }
 
+    /**
+     *
+     * @return side length
+     */
     public int getWidth() {
         return this.side;
     }

@@ -1,4 +1,4 @@
-//package com.example.boing;
+package com.example.boing;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -22,6 +22,11 @@ public class ReadShapeFile {
 	// given the Scanner passed as a parameter. I would suggest static
 	// methods in this case.
 
+	/**
+	 * Reads parameters from array and creates an oval accordingly
+	 * @param shapeParameters Array of parameters that define the shape
+	 * @return Oval created from parameters in the array
+	 */
 	private static ClosedShape createOval(String[] shapeParameters) {
 		int insertionTime = Integer.parseInt(shapeParameters[1]);
 		int x = Integer.parseInt(shapeParameters[2]);
@@ -29,15 +34,21 @@ public class ReadShapeFile {
 		int vx = Integer.parseInt(shapeParameters[4]);
 		int vy = Integer.parseInt(shapeParameters[5]);
 		int width = Integer.parseInt(shapeParameters[7]);
-		int height = Integer.parseInt(shapeParameters[7]);
-		Color colour = Color.rgb(Integer.parseInt(shapeParameters[8]),
-				Integer.parseInt(shapeParameters[9]), Integer.parseInt(shapeParameters[10]));
+		int height = Integer.parseInt(shapeParameters[8]);
+		Color colour = Color.rgb(Integer.parseInt(shapeParameters[9]),
+				Integer.parseInt(shapeParameters[10]), Integer.parseInt(shapeParameters[11]));
 		boolean isFilled = Boolean.parseBoolean(shapeParameters[6]);
 
 		ClosedShape newOval = new Oval(insertionTime, x, y, vx, vy, width, height, colour, isFilled);
 
 		return newOval;
 	}
+
+	/**
+	 * Reads parameters from array and creates a circle accordingly
+	 * @param shapeParameters Array of parameters that define the shape
+	 * @return Circle created from parameters in the array
+	 */
 	private static ClosedShape createCircle(String[] shapeParameters) {
 
 		int insertionTime = Integer.parseInt(shapeParameters[1]);
@@ -54,6 +65,11 @@ public class ReadShapeFile {
 		return newCircle;
 	}
 
+	/**
+	 * Reads parameters from array and creates a rectangle accordingly
+	 * @param shapeParameters Array of parameters that define the shape
+	 * @return Rectangle created from parameters in the array
+	 */
 	private static ClosedShape createRect(String[] shapeParameters) {
 		int insertionTime = Integer.parseInt(shapeParameters[1]);
 		int x = Integer.parseInt(shapeParameters[2]);
@@ -61,9 +77,9 @@ public class ReadShapeFile {
 		int vx = Integer.parseInt(shapeParameters[4]);
 		int vy = Integer.parseInt(shapeParameters[5]);
 		int width = Integer.parseInt(shapeParameters[7]);
-		int height = Integer.parseInt(shapeParameters[7]);
-		Color colour = Color.rgb(Integer.parseInt(shapeParameters[8]),
-				Integer.parseInt(shapeParameters[9]), Integer.parseInt(shapeParameters[10]));
+		int height = Integer.parseInt(shapeParameters[8]);
+		Color colour = Color.rgb(Integer.parseInt(shapeParameters[9]),
+				Integer.parseInt(shapeParameters[10]), Integer.parseInt(shapeParameters[11]));
 		boolean isFilled = Boolean.parseBoolean(shapeParameters[6]);
 
 		ClosedShape newRect = new Rect(insertionTime, x, y, vx, vy, width, height, colour, isFilled);
@@ -71,6 +87,11 @@ public class ReadShapeFile {
 		return newRect;
 	}
 
+	/**
+	 * Reads parameters from array and creates a Square accordingly
+	 * @param shapeParameters Array of parameters that define the shape
+	 * @return Square created from parameters in the array
+	 */
 	private static ClosedShape createSquare(String[] shapeParameters) {
 
 		int insertionTime = Integer.parseInt(shapeParameters[1]);

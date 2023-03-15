@@ -1,4 +1,4 @@
-//package com.example.boing;
+package com.example.boing;
 /**
  * 
  * A class that implements a queue.  It is your job to complete this class.  Your queue
@@ -53,7 +53,7 @@ public class Queue<T> {
 	 * Removes the front element of the queue
 	 */
 	public void dequeue () throws NoSuchElementException {
-	    //Dequeue code is neede here
+	    //Dequeue code is needed here
 
 		if (this.head == null) {
 			this.tail = null;

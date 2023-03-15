@@ -1,6 +1,5 @@
-//package com.example.boing;
+package com.example.boing;
 
-import java.util.ArrayList;
 
 /**
  * The class that starts the program.  The class simply creates a window and displays it given

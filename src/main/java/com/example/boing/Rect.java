@@ -1,4 +1,4 @@
-//package com.example.boing;
+package com.example.boing;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -21,7 +21,10 @@ public class Rect extends ClosedShape {
         this.width = width;
         this.height = height;
     }
-
+    /**
+     * Output information about shape
+     * @return result String which contains shape info
+     */
     public String toString () {
         String result = "This is a rectangle\n";
         result += super.toString ();
@@ -29,6 +32,10 @@ public class Rect extends ClosedShape {
         return result;
     }
 
+    /**
+     * Draw shape
+     * @param g The graphics object associated with the drawing component.
+     */
     public void draw(GraphicsContext g) {
         g.setFill (colour);
         g.setStroke( colour );
@@ -40,18 +47,36 @@ public class Rect extends ClosedShape {
         }
     }
 
+    /**
+     *
+     * @param width Value that width will be set to
+     */
     public void setWidth(int width) {
         this.width = width;
     }
+
+    /**
+     *
+     * @param height Value that height will be set to
+     */
     public void setHeight(int height) {
         this.height = height;
     }
+
+    /**
+     *
+     * @return height of the rectangle
+     */
     public int getHeight() {
         return this.height;
     }
 
+    /**
+     *
+     * @return width of the rectangle
+     */
     public int getWidth() {
-        return this.height;
+        return this.width;
     }
 
 }
