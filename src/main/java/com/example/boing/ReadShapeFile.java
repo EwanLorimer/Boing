@@ -1,4 +1,4 @@
-package com.example.boing;
+//package com.example.boing;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -108,6 +108,23 @@ public class ReadShapeFile {
 		return newSquare;
 	}
 
+	public static ClosedShape createTriangle(String[] shapeParameters) {
+		int insertionTime = Integer.parseInt(shapeParameters[1]);
+		int x = Integer.parseInt(shapeParameters[2]);
+		int y = Integer.parseInt(shapeParameters[3]);
+		int vx = Integer.parseInt(shapeParameters[4]);
+		int vy = Integer.parseInt(shapeParameters[5]);
+		int width = Integer.parseInt(shapeParameters[7]);
+		int height = Integer.parseInt(shapeParameters[8]);
+		Color colour = Color.rgb(Integer.parseInt(shapeParameters[9]),
+				Integer.parseInt(shapeParameters[10]), Integer.parseInt(shapeParameters[11]));
+		boolean isFilled = Boolean.parseBoolean(shapeParameters[6]);
+
+		ClosedShape newTriangle = new Triangle(insertionTime, x, y, vx, vy, width,
+				height, colour, isFilled);
+		return newTriangle;
+	}
+
 
 	/**
 	 * Reads the data file used by the program and returns the constructed queue
@@ -135,6 +152,9 @@ public class ReadShapeFile {
 					break;
 				case "square":
 					shapeQueue.enqueue(createSquare(lineSplitArray));
+					break;
+				case "triangle":
+					shapeQueue.enqueue(createTriangle(lineSplitArray));
 					break;
 				default:
 					System.out.println("Invalid Shape");

@@ -1,4 +1,4 @@
-package com.example.boing;
+//package com.example.boing;
 
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class BouncingShapesWindow {
 	private String filename;
 	
 	
-	public BouncingShapesWindow(GraphicsContext gc,String filename) {
+	public BouncingShapesWindow (GraphicsContext gc,String filename) {
 		this.gc=gc;
 		
 		activeShapes=new ArrayList<ClosedShape>();

@@ -1,4 +1,4 @@
-package com.example.boing;
+//package com.example.boing;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -15,7 +15,8 @@ public class Square extends ClosedShape {
      * @param colour The line colour or fill colour.
      * @param isFilled True if the rectangle is filled with colour, false if opaque.
      */
-    public Square (int insertionTime, int x, int y, int vx, int vy, int side, Color colour, boolean isFilled) {
+    public Square (int insertionTime, int x, int y, int vx, int vy, int side,
+                   Color colour, boolean isFilled) {
         super (insertionTime, x, y, vx, vy, colour, isFilled);
         this.side = side;
     }
