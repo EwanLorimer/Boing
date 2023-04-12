@@ -1,4 +1,4 @@
-//package com.example.boing;
+package com.example.boing;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;

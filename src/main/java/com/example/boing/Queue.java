@@ -1,4 +1,4 @@
-//package com.example.boing;
+package com.example.boing;
 /**
  * 
  * A class that implements a queue.  It is your job to complete this class.  Your queue

@@ -1,4 +1,4 @@
-//package com.example.boing;
+package com.example.boing;
 
 /**
  * You must use this class when constructing your Queue.  This class represents a link of the
